@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/ecg_chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tv_hr_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Heart rate:"
+        android:paddingEnd="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_start_measure"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        />
+
+    <TextView
+        android:id="@+id/tv_hr_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="-/- BPM"
+        android:paddingStart="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_start_measure"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        />
+
+    <TextView
+        android:id="@+id/tv_rr_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Respiratory rate:"
+        android:paddingEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_hr_title"
+        />
+
+    <TextView
+        android:id="@+id/tv_rr_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="-/- BRPM"
+        android:paddingStart="16dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_hr_title"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start_measure"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:text="Start measure"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

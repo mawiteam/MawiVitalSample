@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="16dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0.5dp"
+    app:strokeColor="@color/purple_500">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_peripheral_type_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mawi Vital"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_mac_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            tools:text="FF:FF:FF:FF:FF"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            app:layout_constraintTop_toBottomOf="@id/tv_peripheral_type_name"
+            app:layout_constraintStart_toStartOf="@id/tv_peripheral_type_name"/>
+
+        <ImageView
+            android:id="@+id/iv_signal_lvl"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_peripheral_type_name"
+            android:src="@drawable/ic_signal_level_selector"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
